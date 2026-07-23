@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta — Divulgação & Evento | Agência Ângelo × Nossos Ventos</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --verde:  #00875C;
+    --verde2: #00A876;
+    --ouro:  #C9A96E;
+    --ouro2: #E0C088;
+    --dark:  #060E0A;
+    --dark2: #0A1410;
+    --dark3: #0F1C18;
+    --dark4: #131F1A;
+    --creme: #FAF8F4;
+    --creme2:#F0ECE4;
+    --creme3:#E0D8CC;
+    --lj:    #E8601A;
+    --lj2:   #F07A35;
+    --tw:    rgba(255,255,255,0.9);
+    --ts:    rgba(255,255,255,0.42);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: "DM Sans", sans-serif; background: var(--dark); color: white; font-size: 15px; line-height: 1.7; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,14,20,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 0 56px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-size: 14px; font-weight: 600; color: white; text-decoration: none; }
+  .nav-logo span { color: var(--lj); }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+  .nav-links a { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ouro); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 56px 80px; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(201,169,110,0.1) 0%, transparent 50%), radial-gradient(ellipse at 15% 80%, rgba(0,87,60,0.5) 0%, transparent 50%); }
+  .hero::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 44px 44px; }
+  .hero-inner { max-width: 1000px; width: 100%; position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro); margin-bottom: 22px; opacity: 0; animation: up 0.7s 0.1s forwards; }
+  .hero-eyebrow::before { content: ""; display: block; width: 24px; height: 1px; background: var(--ouro); }
+  .hero-h1 { font-family: "Montserrat", sans-serif; font-size: clamp(34px, 5vw, 58px); font-weight: 700; line-height: 1.02; color: white; margin-bottom: 20px; opacity: 0; animation: up 0.7s 0.25s forwards; }
+  .hero-h1 em { font-style: italic; color: var(--ouro); font-weight: 400; }
+  .hero-p { font-size: 15px; font-weight: 300; color: var(--ts); max-width: 420px; line-height: 1.85; margin-bottom: 40px; opacity: 0; animation: up 0.7s 0.4s forwards; }
+  .hero-meta { display: flex; flex-direction: column; gap: 9px; opacity: 0; animation: up 0.7s 0.52s forwards; }
+  .hm-row { display: flex; align-items: baseline; gap: 8px; font-size: 13px; }
+  .hm-row label { color: rgba(255,255,255,0.28); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; flex-shrink: 0; }
+  .hm-row span { color: var(--tw); }
+  .hero-visual { opacity: 0; animation: up 0.7s 0.45s forwards; }
+  
+  
+
+  
+
+  @keyframes up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* LAYOUT */
+  .sec { padding: 88px 56px; }
+  .sec-inner { max-width: 1000px; margin: 0 auto; }
+  .sec-mid { background: var(--dark2); }
+  .sec-dark3 { background: var(--dark3); }
+  .divisor { border: none; border-top: 1px solid rgba(255,255,255,0.06); }
+
+  .sh { display: flex; align-items: center; gap: 14px; margin-bottom: 44px; }
+  .sh-n { font-size: 9.5px; font-weight: 700; letter-spacing: 0.2em; color: var(--ouro); background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.22); padding: 4px 10px; border-radius: 4px; flex-shrink: 0; }
+  .sh-t { font-family: "Montserrat", sans-serif; font-size: 28px; font-weight: 700; color: white; line-height: 1; }
+
+  /* PACOTES */
+  .pacote { background: var(--dark3); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; margin-bottom: 24px; }
+  .pacote-header { padding: 28px 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .pacote-header.azul { background: linear-gradient(135deg, var(--verde), var(--verde2)); }
+  .pacote-header.ouro { background: linear-gradient(135deg, #2A1E0A, #4A3418); border-bottom: 1px solid rgba(201,169,110,0.2); }
+  .pacote-num { font-size: 9px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
+  .pacote-nome { font-family: "Montserrat", sans-serif; font-size: 20px; font-weight: 700; color: white; line-height: 1.2; }
+  .pacote-nome em { font-style: italic; color: var(--ouro); }
+  .pacote-prazo { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 5px; }
+  .pacote-valor { text-align: right; }
+  .pacote-valor .v { font-family: "Montserrat", sans-serif; font-size: 48px; font-weight: 800; color: white; line-height: 1; }
+  .pacote-valor .v sup { font-size: 20px; color: var(--ouro); vertical-align: super; margin-right: 3px; }
+  .pacote-valor .obs { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 3px; }
+  .pacote-body { padding: 32px 36px; }
+  .pacote-intro { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 28px; max-width: 680px; }
+
+  /* Subtópicos */
+  .topicos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
+  .topico { background: var(--dark4); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 22px 20px; }
+  .topico-icon { font-size: 24px; margin-bottom: 10px; }
+  .topico h4 { font-size: 13.5px; font-weight: 600; color: white; margin-bottom: 6px; }
+  .topico p { font-size: 12.5px; color: rgba(255,255,255,0.42); line-height: 1.65; }
+  .topico ul { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-top: 8px; }
+  .topico ul li { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.42); line-height: 1.5; }
+  .topico ul li::before { content: "›"; color: var(--ouro); font-weight: 700; flex-shrink: 0; }
+
+  /* Estratégia */
+  .estrategia-box { background: rgba(201,169,110,0.06); border: 1px solid rgba(201,169,110,0.16); border-radius: 10px; padding: 18px 22px; margin-bottom: 20px; display: flex; gap: 12px; align-items: flex-start; }
+  .estrategia-box .icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .estrategia-box p { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+  .estrategia-box p strong { color: rgba(255,255,255,0.8); }
+
+  /* Notas */
+  .nota { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 14px 18px; font-size: 12.5px; color: rgba(255,255,255,0.35); line-height: 1.7; margin-top: 8px; }
+
+  /* CTA do pacote */
+  .pacote-cta { display: flex; gap: 12px; flex-wrap: wrap; padding: 24px 36px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .btn-cta { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+  .btn-cta.primary { background: var(--lj); color: white; }
+  .btn-cta.primary:hover { background: var(--lj2); transform: translateY(-1px); }
+  .btn-cta.secondary { background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.28); color: var(--ouro); }
+  .btn-cta.secondary:hover { background: rgba(201,169,110,0.18); }
+
+  /* AGÊNCIA */
+  .agencia-box { background: var(--dark4); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 36px; position: relative; overflow: hidden; }
+  .agencia-box::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--lj3, #C44D0E), var(--lj2)); }
+  .agencia-nums { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 24px; }
+  .agencia-num { background: var(--dark); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 18px; text-align: center; }
+  .agencia-num span { font-family: "Montserrat", sans-serif; font-size: 32px; font-weight: 700; color: var(--ouro); display: block; line-height: 1; }
+  .agencia-num p { font-size: 11px; color: rgba(255,255,255,0.32); margin-top: 4px; }
+
+  /* CTA FINAL */
+  .cta-sec { padding: 88px 56px; position: relative; overflow: hidden; }
+  .cta-sec::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(201,169,110,0.07) 0%, transparent 55%); pointer-events: none; }
+  .cta-inner { max-width: 1000px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
+  .cta-h { font-family: "Montserrat", sans-serif; font-size: 38px; font-weight: 700; color: white; line-height: 1.15; margin-bottom: 12px; }
+  .cta-h em { font-style: italic; color: var(--ouro); }
+  .cta-p { font-size: 14.5px; font-weight: 300; color: var(--ts); line-height: 1.8; max-width: 440px; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--lj); color: white; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 16px 28px; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s, transform 0.2s; }
+  .cta-btn:hover { background: var(--lj2); transform: translateY(-2px); }
+
+  footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 32px 56px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .ft-logo { font-size: 14px; font-weight: 600; color: white; }
+  .ft-logo span { color: var(--lj); }
+  .ft-info { font-size: 12px; color: rgba(255,255,255,0.24); text-align: right; line-height: 1.9; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; } .nav-links { display: none; }
+    .hero, .sec, .cta-sec { padding: 80px 24px 60px; } .hero { padding-top: 100px; }
+    .hero-inner, .topicos, .agencia-nums { grid-template-columns: 1fr; }
+    .cta-inner { grid-template-columns: 1fr; gap: 28px; }
+    .pacote-header { flex-direction: column; align-items: flex-start; }
+    .pacote-valor { text-align: left; }
+    footer { padding: 28px 24px; } .ft-info { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo"><span>Agência</span> Ângelo</a>
+  <ul class="nav-links">
+    <li><a href="#pacote1">Divulgação</a></li>
+    <li><a href="#pacote2">Evento</a></li>
+    <li><a href="#agencia">A Agência</a></li>
+    <li><a href="https://instagram.com/aagenciaangelo" target="_blank" style="color:var(--lj)!important;">@aagenciaangelo</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Proposta Comercial · Imóveis</div>
+      <h1 class="hero-h1">Nossos Ventos<br><em>Condomínio Clube</em></h1>
+      <p class="hero-p">Dois pacotes estratégicos para a fase final do empreendimento — divulgação dos últimos lotes e cobertura profissional do evento de entrega.</p>
+      <div class="hero-meta">
+        <div class="hm-row"><label>Para</label><span>Nossos Ventos Condomínio Clube</span></div>
+        <div class="hm-row"><label>Por</label><span>Adson Ângelo · Agência Ângelo</span></div>
+        <div class="hm-row"><label>Data</label><span>Julho de 2026</span></div>
+        <div class="hm-row"><label>Validade</label><span>3 dias</span></div>
+      </div>
+    </div>
+        <div class="hero-visual">
+      <div style="display:flex;align-items:center;justify-content:center;padding:40px;">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAGaASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDw4U4UwGnCqAeKcKaDSg0wHClFNzS5oAdRSZozQhC0UmaKYC0lJmigQGm0pppNAgNNNKaQ0AJSGlpKAENJSmkoASkIpaDQA3FIRTqQ0AJimkU6koAbikIpxpDQAwikIp5ppoAbimkU4ikNADDSGnEUhoAYRTTTzTaAGEUmKcaQ0Aa4pwNRg04GpLJAaXNMBpc0APzS5pgNOzTAdmjNNozQIfmkzTc0ZpgOzSZpKTNAhSaQmkzTWcL1NNK4m0txxNJmomnHYE0wzMemBWioyZjLEQXUnzSZquXY/wARpMn1NWsO+5m8UuiLGaTNV6Pxp/V/MX1vyLBpKh3H1NKHYd6Tw76MpYqPVEtITTPMPcUocH2rN0pLoaRrQl1FpKU0lZmohpDS0hoAQ0lKaaaAENNNONNNACGmmnGmkUANNNp5ppoAYaQ06m4oA1AaUGmA04VJY8GnUwGlzTAeDS5pgNLmgQ7NGabmjNMB+aTNNzSNIFHNNK+iJbSV2PzUbzKvHU+1QvKz8dBTK6IUOsjkqYrpAe0zN3wPamUUV0KKWxySk5athRRRVEhRRRQAUUUUAFFFFABRRRQAZxTg3rTaKiUIy3NIVJR2Y6g02lzXNOg1qjrp4hS0loBpKU0lYHSNppp1NNACGkNKaQ0ANNNNONNNADTSUppDQBoA04UwGlBpFEgNLmmA0ZoAfmlzTM0ZoAfmjNNzTHk7D86qEHJ2RE5qCuxzy7eByahJJOT1ooruhTUdjzalVzeoUUUVoZBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFIaWisalJS1W50Uq7jo9hpNNNKeKbmuNq2jPQTTV0BpKCaTNIBDTTSk00mgBDSGlJppNAF4GlBpmaXNIofmnZqMGlzQA/NGaZmjNOKbdkTKSirsVm7Cm0UV6EIKCsjy6lRzd2FFFFWZhRRRQAUUUUAFFFFAHf8AwQ8Oab4j8bmPVbaK8trKxuL37LKMpOyKNqsO4yc49q1tf8JeH/HfgeXxx4K0/wDsy707A1nRUYskQIz5sWedvfHoD0KnOZ8AtRXT/itoqyH93eGWzceokjIH6gUzwP4tm+E/xHuhcKX09biWw1G3IyJIA5BOO5X7w/Ed65Kilztx3SR0wceRKWzOAorvPjF4Bj8D+JhJppEug6qn2vTZkOU2HkoD/s5GP9krXO+DfCl9428S2Og6cP310+GkxkRIOWc+wGT+Q71vGpFx5+hi4NS5ep2Pwq+GOn+INPv/ABd4suJLLwtpYJkZDte6cdUU9gMgHHJJAHcib4r6L4afwh4S8W+HdIj0RdWE8T2SOWysbfK5J6tjgnvkelTfGvxvYCO0+H3hdtnh7QQI5GQ8XU69ST3CnPPdix9Kzvi07ado/gbw2T82naGk8q/3ZJ2LkfXAH51zx55SjNvfp5HRLljFxXTr5nnNFFFdhyBRRRQAUUUUAFFFFACEZFRNwcGpqa67h71jVp8yutzooVuV2exCTSZoJ5ppNcR6AE0lBNJQAmaDSGkoAu5ozTQaXNIY7NFNzRmgB9LTVHenV2UIWXMzgxNS75UFFFFdByhRRRQAUUUUAFHTrRXY/CLVNA0b4haTe+JUjbTY3YM0q7kikKkI7D0DYPt17VMnypsqKu0jjiQDgkA+h60Yr6C+JXjPxv4Su2/t/wAL+FPEGgzNm01BtODQzxnlfmVjtbHb8s1xcXi34U65hdb8B3uiSn71xol4So9/LfA/nWMazavy/caypJO1/vPP9B1WTQtc0/Vojh7K5iuB/wABYH+QNdt8e9JTTfiZqF1B/wAeuqxxalAw6MsijP8A48DWpF8Mfh34nwPC/wASYLad/u2etweS303cZ/AGt344+C9SsPhx4O1PUWt573S4/wCy7me2fzI5IzkxMGwMj5fzaodWLqR+4tUpezf3lP4cXUHxT+H198NtSkUarpyNe6FO55+XrFn0GSP91v8AZqK1im+Cnw2kvpo2tvGPilWhgRhiSwsx95sdmJ/Ur/drmvgVotxrHxM0qSK5a1i04tqFxMDjbFGOR/wLIU+xNZnxR8byeP8Axnf6yWItN3k2aE/cgXIX8Tyx92pcjdRwXw7sfPampvfYyvCGhP4n8U6ToqAsb27jhb/dLfMf++c1ufGPV01r4ma/cREeRDcfZIQOgSICMAf98mu9/Zr8AatPr8njCWyeO0sbeVbJplKi4uGXA25/hUZy3TJFZGofCDRdEuJLjxt8SdEsbmRmlltrBGupixOTxkdz6U3Wj7XfZEqlL2fqeTUEheSQPrXpDXfwc0Q4g03xT4lkX+K4nS0ib8F+bFbng3x3FquuQaT4K+EXhpriUgf6QHuGRe7PIw+VR3JrSVVpXUf0IVJXs5HjYIPIOaK9b/aMXwxD4j0620WDTYdThtyuqLpyhYRJkbV443D5vfBGea8kq6c+eKlYipDkk4hRRRWhAUUUUAFFFFAEM6Y+YfjUOatkAgg9DVNwUYqe1cdeFndHfhqnMuV9BCaQmgmkzWB0hmkzRSZoAuZpabmjNADs0dTim5p8Yyc+lVCPNKxFSXLFskHFFFFegeWFFFFMQUUUUAFFFFABRRRQB3vw9+MGseB4m0u5hj1nw9N8s2l3fzIFPXyyc7fpyp9O9djqHwn8K/E2wl1z4W6jHBdIN9xoN221oj6KTkr7Zyp7EV4jWx4Tt/EVxr1sPCyX7aspzCbLIkX3yOg9c8etc9Slb34Oz/D5m8Kl/dkrr8SnrGjajoN/Lp2rWM9ldxH54J02sPf3HuOK9K+EWsWmv+Hte+Gmr3yW0esRiTS5bhv3cN2vIX/Z3EKfqD3Nesa1No6+DbWx+Od3obao/wDx7/ZAxu41I+98gJDepUbfrXl1/wDAOPUplvPB3jLw/qejy/MJbq7EUsA/2wAc4/A+wrH28akbT08+nyNfYyhK8dfLqbvwX+G3jHwt42v7LXPDl9b2F/YT6fPeLtaOPcMhlbPIyMcc8ijRvg+/wi0zXfGniu1s9UfR126XaA7op3JCpNIOwywwp6YJ9K6LxXaa3pfwQ/s/wZ4kuPEc1pdeVql9aztLLsxl0jIJIRSUGAc7fqaz/gTFrc/gXxInivTL7VfDAjV7aynieSS4kUlmSJTyVOF9t341g6kmnO/lbubKEU1C3meP+J/ix4x8XFk1PxBc+Q3AtbZ/JhA9NiYyPrmuUVSWCqpLMcAAck/1NeuyfHlhqEmn6n4A8NnQ1YxtpZtAksS+m8j74/3R+Fel+ArX4e6rYXer/C/S9Hi8UrHuitdXeQtbN3wpJwPRk49SK6XW9lH4LGCpe0fxXPJvDXwVlh0xfEfj/UV8LaEMELMP9Luf9lE6gn3BPt3pniT4vQ2OmSeG/h3px8OaIflluQf9Nvf9p36rn0Bz7jpXPfEufxrN4kk/4Tn7YNRGdizDEYX/AKZAfLt/3fxrk60hT5/em7/kZyny+7BW/MCSTk9+aKKK6DAKKKKACiiigAooooAKguk4DjtwanpGUMpU9xUTjzKxdOfLJMz80E0jAgkHqKTNeeeqLmkzSZooAt5ozSUUALmp4xhRUA5IHrVmujDrVs5MVLRIKKKK6ziCiiigAooooAKKKKACiiuu+FFp4bvvHemw+LJoYtJyzP57bYncL8iueylsZ7du9TKXKmyox5mkXfAnwruvE9m2va1fReH/AAxAcy6ldfL5nqsSn759+n1PFdRq3xo0nwdpknh74V6WNNtjxNq9yga5uT/eAPT6t07KK3PHHw41nxpqB1HX/iL4NsdNg+W0toLkmC1iHQInA6d+prkz4Q+EWgEHVvH2o65IvWHR7Pap9t7ZH61x88ajvPXySOvllDSOnmeZXt9dajdS3t9czXNzM26SaZyzufUk9a2fDfw98U+MHA0TQL29UnHnCLbEPq7YX9a7qD4ofDzwo27wr8N4bmdPu3mtT+a/12/Nj8CK7P42fEfxFYfD/wAJW0d2dL1LWYDeXi2JMQSLaNsanOVGWGcHnbWkqs7qMY2v3/yM40oWcpSvbsZlx4iuv2fPA9t4csNRsp/Ft7fC+vIo8SxWkQAHlt7sFA7HkkdjVz4r/FPxO3hrwd4w8Oa1eaTbatDIk1lGVKpNGRk5IJI6jnsBXifhXw3qHjbxNZaLY7nur6XDSNk7F6vIx9AMk16P+0YI9D1Lw94NsLZ4NL0XTlMBb/lszn5n9z8vPuTWbpRVSKer1bNFUk6ba0WyJ/Gaj4r/AAqh8f8A2SJfEWkXH2LVGto8faYuMSEDuNyn2G7tjHjtneXFhcxXdlcS29xC26OaFyrofUEcivcP2Wddnjv/ABH4egkRZ7uz+1WokGV81MryO4w65HoKyJvir4L8RyvB46+G9mt0pKS3mjv5EqsDg5XjPOf4jVQlKEpU0rpfqTOKmlO9my54d+OmneJdMXw38U9Lj1ewbhNRjj/fQn+8wGDn/aTB9QaxPHvwXm0fTj4m8H3y+I/DEg3ieAh5bYf7YHUD+8ACO4FSz+EfhFrwL6H49vtDlbpb6xaFlB9N64/ma2fBfgTxj4Q1D7f4J8e+Eb9WOZLePUsR3A9HjYfr1HrU3jB3hp5PYq0pq09fNbniVFenfHvTvDFl4ms5tANlDeXNv5uqWdlKJILafjhSOMnJyB6A4Ga8xrrpz54qRyzjyycQoooqyAooooAKKKKACiiigCjdrtlz/e5qGrd6vyK3ocVTrgqq0menQleCFzSUUmazNS3RRRQA+IZkFWKggHzH6VPXZQXunn4l3mFFFFbnOFFFFABRRRQAUUUUAFFFFACbFHRVH4UtFFAGl4Z0Z/EXiPS9HjB3X11Fb/QMwBP5Zr0H9pHWI9Q+JUunwEC30i1hskUdFON7f+hAfhTP2cNITUvijZ3MoHlabbzXjE9iF2g/m/6UeC/DQ+LXxR1bV9SYJokNzLqWozucKIdxKoT/ALQAH+6GNcs5pVHJ7RX5nTCLdOy3b/I6jwDbw/Bv4YXnj3UI1/t7W0+z6VBIOVQ8q2PQ43n/AGVUd6a85+O3wpbzD5/jPwspck48y9gPU+5IH/fa/wC1XBfF74iv8Q/FDT22Y9HsgbfT4MYCxjq+OxbAPsAo7Vj+AvGd94B8U2eu2OX8lts0OcCeI/eQ/Ucj0IBqVRk17T7W/wDwCnVinyfZ2/4JqfBjXv8AhHfidoF4z7IpLgWsh/2ZRs/mQfwqP4w6L/YHxN8RWQTahu2nQf7MgDj/ANCNbXxk8LWui6xZeMvDLbtB14C9s5EGBBP95o/bnkDtyO1Xv2iDHqmt+HfFMGPL1zRoZ2I/vrwf0YD8KqM06kZrqrfcTKLUHF9GeTUhVTyVU/UUtFdRzAAAMAAD2ooooAKKKKACiiigAooooAKKKKAIrld0D+wzWfWo4yjD1BrLrkxC1TO3CvRoQ0lKaSuc6y5RTqTFVYVySDqamqKDqalrso/CjzsR8bCiiitTEKKKKACiiigAooooAKKKKACiiigD0v4C61p2l+JdXtNR1K30wappFxZQ3U77EjlbBXLHp0P5VP408V6D4T8HL8PfBF59timYSazqyDAvZAB+7T/YGPpgAc5JPltFYuinPmZsqrUeVBRRRWxiem/C7xbot5o978PvGlwYdB1FvOtbwn/kH3I6OD2U/lnrwxq58aLnRLDwz4M8KadrNlrN7otvKlxc2bbowrFdoyCRk4zjPGK8mwaOnSsfYrn50zb2r5OVoKKKK2MQooooAKKMUUAFFFFABRRRQAUUUUAFZR61q1lnqa5sR0OvC9RKSnUmK57HXcu4pMU7FGK0sK46HqalqKPhqlrppfCcOI+MKKKK0MAooooAKKKKAOw+EWmWGs/EjQrDVLaG5sppmE0UwyjKI2PPtxn8K6L40/B2XwDeDV9IV7jw5dsPLcHcbVm5EbHup/hbv069ee+EP/JRNJ+lx/6TyV6B8Efi7Zvp6eAfGxjudHuoxbWs9zysYPHkyE/wH+Fv4T7YxyVnOM+eOqS1R1UlCUOWXXqeGtwrH2Ndx418L/afHGm6HoGnxrNe2GneVBENoaWS3RmY+mSSSfqau/GX4RXnw21Jp7YSXGg3TMLa4bkxN18qQ/3h2P8AEPfNelfD61t7j4/2Ek4UtB4ZtJYgf732WJc/kzU511yqpHsxQou/JLujzrxL/wAI78LdQbQNP0nTvEOuWoAv9R1KMywRSkZMcMOQuFzgs2ST2p3h7xb4T8YX0WjeNPDOk6cl0wii1jR4fsklq54UugJRlz144ri/GH2j/hLdb+17vtH9oXHmbuu7zGrIIyCD3q1STjq9e5DqNSslp2PQNV+DWtaX8SrPwQ80bNfyA217t+SSDkmTHqoByvqPcGneLNT8N+C9evPD+ieFNM1BNOlNtNfawJJ5rmReGYKGVUXOcADPvXo3xF8TXmh+AvhX4xiaN9btVUqZBnzUMA3q3cg4GfrVafVfg/8AGaYz6qZ/CXiO4xvnLhY5XxjJY/I//Atp96541ZNKU1deXc3dOKbjB6+fY8zvpfBXiLw9d3sFuvhjX7QB1tImkltNQBOCI92WicehJX+l7wR4J0x/Bus+PPEMM15pmmSLbwWEMhjN3OxUYdxyqDcuccnn8ZviD8DPEfgW0fVY3h1jRQN3220/gU9C6dh/tAke9O+FfxUsvCGn6h4a8SaSNW8N6m26aEAF4mwASAcBgQBkZBBAINauV4XpO5mladqisYkHjXRZLjZqHgLw7JYk4Mdp50Eyj/Zl8wnP+8CKoeMrDw3ZajFJ4X1aa/065hEwjuEKzWjHrFIcAMR6ivWJfg34B+IUD3Xw38VxwXmN39mXzkke2DiRfrhhXlGq+DdU8K+KLbRPEdk9nI08QbccpJGzgFlYcMuM8inTqQb91tPsKpCaXvK67nTW3hXR/AfhXT/E3iywOqalq4MmmaM7tHEIh/y3nK/MRyMIMZyM+1Sz+KFs8oh1fwN4RvdNY4a3t7AW0ir/ALEqncD7nNdT+1Ok0XxAsIiu20j0uJbcDoFDuCB+OP0rxuiklUgpy6hUk6cuWPQ9H+Ivw30/TdBsPG3hG4nu/DGpELsm5lsZDx5bnuMgjPUEYOcgk0HwdpOg/Dr/AIWB4isX1UXV19j07TfNaOJ2GcyTMvzbflbCgjOPfjrPhPMuofAj4g6dfHdaWytNHu6K5iDcf8CRTWH8NPixommeGZvBPjnSW1Lw9LIZI3jXc9uSckEZBI3cgqQQSetZ807OK1s/nY05YXUtrr8TmrHxl4cu7gQ694G0f7C5wZNJ8y2uYR6oxdlYj0Yc+tYnivTtG0vWpoNA1f8AtfTSqvDcGIxuARnY4IHzL0OOK9eufgT4S8bWkl/8NPF8Fw4G46fePuK+2cB0/wCBKfrXjev+H9U8L6tPpOs2ctnewHDxv6HoQRwVPYjg1rSnCT91/IyqwnFe8vmZ1FFFdBgFFFFABRRRQAh4BrNrRkOI2PtVLbXPW6HXh9mR4oxT9tGKwsdFy5ijbT9tG2tuUm40DBp9Jtpa1p6aHPX6MKKKK0OYKKKKACiiigDr/hI234haUfa4H/kvJXHJzGv+6P5Vd0nT7/VdStrHS4ZZ724fZDHEcM7HsDkc9afrehan4b1GTTdYsZ7G8jAZoZlwwBGQfoRUaKW5evLse4fB74paf4p0g/Djx4Uura6j+z2dzcN98fwxOx6MONj9cgD0rA+I2uT/AAz+OMN9pm6X+ybWzh2SHBmiFuqMjH1K9/XmvIK1G0XXNQl06V7S8uJdXYpZM5LNdENs+Uk5ODxWP1eMZuXR9Db28nFR6rqeofErwZD8R7p/Hfw9U6rDeqH1HTocG6tJsYLGPqQeM4zzkjINcXoPws8QanP5urWU+gaRCc3epanGbeKFO+N+C7Y6KuSTViD4SfErTrhZrfw5q1rOvR4pFjcfQhgaZ4g8CfEdrSXUNf07WJbe1QyPNe3IkEajv8zn9KUXZcsZK34hJXfM4s1PH3jjQ/HXi/RdOL3Vj4P0lY7CB41HmiHgNNtPc4HGOg9ayfHvwx1bwhqLPawzapodwd9jqdsnmxTxnpllyA3qPyrml0PVH0Z9bWwuG0xJhbvdhcxrJgEKT2OCKm0jxTr/AIfRk0jW9S05G5ZbW5eNT+AOK0UHGyg9iHNS+NbntHwZk1fwR4O8R6p4wa4sfC8tm0VrZ32VNzMQRiKNucEHbwMHPtmvNPBPge08b6NqtvY3jr4nttktlp7uqpeRfxqhPWQdhn0/DDMmv+MtR2yT6hrF75byfvZWlcIilmI3HoFBP4Ve0P4feLNfsYtU0bRbq6tmYiOeJ0HzKecZYEEVChy3k3Zsrn5rJK6RXg8JeKotVSzg0HW49RR8JGlpKsqt7HGR9a9R+Purg+FvB2gavdxXniqxgL6i8bhmhygG12H8RIB/4DnvWH/wjPxvexNts8WtaYwU+3MUx6ff6VzN/wDC/wAa6faXF/feH7yG3hRpZpndMKo5LH5s0tJSUpNaD1jFqKep6ReahZfHzwTptiLu3tvHWioUjhuHEY1KPAB2MeNxwDjswPY5rzWP4W+OZdQ+wDwlrSzg4O+1ZUHuXPyge+cVl+H/AAxrfim8NroemXd/Og3sIEyIx/eZui/UkV2GpfD/AOKq6U/nxavf2MQ/eQ22pC6VB/tIkjfyppez92MlbzE37RczTLvibX7DwL8PD8PNHvoL/Ub6f7Trl5bNuiRhjFujfxY2qCRxwfXjG8N/D2Hxn4NurvQLia78T2VxmfSSVBltiOJIh1Yg9Rnt9M8QVKEqVKlTggjGPar2h6ZrGq6lHBoVpfXV+PmRbJGaRfcbeR9av2fLHR67k8/NLVaGpoPhPxlJr0Fvouka1BqyOPLaOCSJ4mz1LEDaB3JOK739pTWbPUfEWi2SXVveapp2niHUZ4CCvnEg7cjuDuOO26sDXLP4vW+mSf2u3i9rCMYkDXEsiIP9raxx+NefdelTGPPNTbWnYcpcsXBJ69woooroMAooooAKKKKAI5vuY9ar7asSjOBTNprnqas66WkSLbSbalK0baixrzFzbRtqXbRtrp5TPmIttNYYNT7KbJHlT60JWJnqrEFFFFUcoUUUUAFFFFAE9hfXGl31tf2jlLm1lWaJh2dSCP1Fe7ftC6fb+L/CHhn4j6bGNk8KQXO3+FXyyZ/3X3r+IrwKvoP4EXMPj74b+JPhzfOpdEaW1LfwrJyCP92UA/8AAq5cT7rjV7fkdOH969N9fzPBtK0y51rU7TTLJC91eTJbxKO7swA/nXpn9qWt58cfDOm6c4bTNDvbTSbMjoyRNhn/AOBPvb8axvh/azeFD4i8V3sXlXHh+FrS2Vh01CUmJB9UHmP/AMBFZXwu5+JPhfJJP9qW+Sep+cVU/eu+yJh7tl3Z2P7StvPJ8U7lkhnZfsVtgqjEfdPSvK2tLkKS1tcBQMkmNsD36V7l+0F4/wDFfhz4iyWGj+IdS0+0FlA4ht5tq7iGycepxXlmp/ErxnrNhNp+o+KNXurScbZYZbglXHoR3HtU4bm9nHRFV+X2ktT2L4D6/wCHdN+Hh0fxMsRste1mexzOB5JbyIyFc9gegPY46da8++MXwivPhrq3n2wluNCu3ItrhuTE3/PKQ/3h2P8AEPfNZ10P+LMadnv4juf/AEmjr1D4O/FLT/GGkn4deO9l1HcILezuJz/rh2iduzj+BuvAHXGcmpU5OrHVX1RqnGcVTlvbRnmfwZ58cr/2DdR/9JZK4VB8i/7o/lXuunfCvUPhp8VEibzLnSbnT9SNneEfeH2WT5H9HH6jkd8eFJ9xf90fyropzU5OUdrL9TCpFwik/M9+8F5H7LfirH/Pef8ALdFXinh7Q7jxLr1hotmB9ovrhIEJHClj1PsBk/hXtfgv/k1rxV/13n/9ChrzX4PanbaR8UPDl3dsqQi8EbM3Rd6sgP5sKypNpVGu7Naiu6afZHSfGnU4vCl3H8OPDbvaaNpkUZvPLO1r65ZQxeUj72ARweBk+1ec6Br+p+FtTh1PRb2Wxu4TlZIjjPsw6MD3B4ruv2iNIn0v4q6pLKpEd8sV1Ex6MpQKfyZSK81rWgk6a8zGs2qj8j234paLp/j34d6d8VdLtIrO+ZhBrEMQwrPu2F8eobHPdWGelW/7A1a1/Z40u48DwzST6jM0utyWQJuJFBYbPl+bapABUdvqag0C4Gj/ALLeuNenA1PUHhtFb+Il4xx/3w5/4Ca888BfFTxL8Op3/sa7RrWRt8tlcDfC59cdVb3BB+tc8YSlFqP2WbylFNOXVGJoPiHWPCWrJqOkXtxYXsDclCRn1V17g9wam8X+Io/Feuz6umk2WlNcBTJBZgiNpMfM+D0LHnA4/nXtS/E74XfFcJaeOPD/APYupPhF1GI8Bj381QGA/wB8Ee9eZfFj4aT/AAz8QR2Quvtlhdxme0uCAGZAcFWA43A45HBBBranUTnaUbSMpwajeLvE4miiiuk5wooooAKKKVRuNJjSuNKmk21PspNlYM6UQFaNtTbPajbRYq5b2Uuyp/Lo2V28pjzEGz2o2VPso8ulyj5jNnj8t/Y8io60bi382MgfeHIrOqGrGUlZhRRRSJCiiigArsPhN4zXwJ4703V53ZbIsbe8wCf3LjDHA64OG/4DXH10OnWmk6boEGtapYy6l9qvJLVIUuTAsSxojMxYAkufMG0dAASc1FRJx5X1Lp3Urrodt8c/GvhrXLmPT/CE6z2NxdSarfzIjKJrt1CDhgDwqk/VzXD+ANTtNF8caBqV/L5NpaX8M00mCdiBuTgc1LaWOkWWk3euXljdXsH2/wCxW1rJOYdg2GTdK6jOduAAMAncegxWna+ENDk1TU4by+ubCy/su3vrOabDG2edotgmwOVHmEMQOmGx2rKKjCHJ0NXzSlznZfFn/hC/iJ4vfXbP4h6PZxNbRQeVNaXLNlM5OVTGOa4PU/CPhqx0+e5t/iDpN/NGhZLaCyuQ8rdlBZQB9ScVPb+EINN1nRrPWbOffJa3k93b+cU3tCZtoVx0UiNeR1ByOtM0/wAM6b4mfQrqyjm0yDUbyaznh80zYMcayFoiwycq23ac4bHPNTBKCSUnZehUrzbbSuVp9ZsX+GNloqzg6hFrc928O08RNAihs9PvAjHWuYBKkEEgjkEHpXR3NtoesaHNqOl2NzpktpdQQvHJcmdJ45d207iBtkGw5A4IOQBiuhvPh3pFtreozLe3DaCFuIrFiR50t0iP+5b02FCzH+6U/vitFOMTNwlI9A8C/tC2Nz4NvdF8ZzyDUYLSSO1vfKMn2nMbKobA4kGcbuhB5wc5+eVGFUHsAK6fRPD2nXF34dbUJLg2mo29xPciAgSKIjKMJnjJCDr3ouvB32KCyma4E9veahFbwXMYxHcQOoIkXPQjkEdVIIPSppxhTb5epU5TqJX6HceF/HXh7T/gD4g8L3OoiPWbuaVobXy2JcMY8HIGP4T1PavIs85BI9xXTPpmlaFa317f2kupBNTm06GEXBhRRGMl3ZQSSQQFHA4YnOMVleJNNh0jVZILZpWgaKK4iEuPMVJI1kCtjjcA2D64z3qqajFu3XUmo5NK/Q9KHxD8N/E3wzZ6D8QZ7jTtX08bbLX4YvNDDptmQc84GSOpGeDnOBH4H8GafMLjVviPpl1ZKc+TpNtNLcyj0AZQqE+pPFZWtWeg6Gv9jyafeXF+bSGcagl1gebJGsgCxYwYgGxnO44Jz2rK1/TYdLt9KeF3ZrzTY7xw5zh2aQED2+QVMYJaRbSZUpN6yV2je+IHxAPi5dP0rTbL+y/Dukx+VYWAbcR6ySH+Jz+mT6knT8Pap4P8T+CYfCniGeLQNUsZ3msdZW23xyq3WOfaN30bnt6c4tz4VsrbxPqml+dK9vZ6dJeI4I3Ei2WVc+25h+FdBpvgnQ9Q8OWeI7Nb+fRZ9RMn9qEXRlTzSqpbEYZSIwPXG454pS5FFJaBFTcm2VLf4Z6JbXCS618RfCkemg5drGd7ieRe4SMIDkj16U/4zfEay+IGtWKaRbzQ6RpVv9ltTMMSSdMuR26KAOvHPWqN/o2j6f4H0vUPslhJe31m07SS6m6ThvOdAUgAwygKPrzXF1UI80uZu9hTlyrlS3CiiitzAKKKKACrMMeEyepqO3h81/8AZHJq9sqJdi49yvspNlWNlBSosaXK+yk2VY2UmyixVy9so2VZ8ujy69LlOXmK3l0nl+1WvLo2UuUpSKuys/ULUxnzlHyn73sa2vLprQh1KsMg8EVEoXQ73Oaoqze2bWkuOSjfdb+lVq52raEhRRRQAVp6P4k1TQkljsLlUilZXeKWFJkLL91trggMMnDAZrMopNJ7jTa2NWx8U6xp9zd3MV4ZJL1t9yLiNJlnbOQzK4ILAkkHGRmqtzq1/eXF3c3F5NLNe/8AHw7tky8hvm/FRx7CqlFHKtw5nsa1t4r1u0vdOvY9QlafTITb2jSgSCGI7vkAYEFfnbg560zUfEurapc2tzcXhWSzx9mECLCtvzu+RUACnPOQM5rMopcq7D5ntc09V8S6rraxpfXQdI5DKEjiSJTIerkIAGc/3jk1X/ta+N496bqT7Q7ySM+erOCHOOmSCc1Uop8qFzMnjvrmIwbJ3X7OrLFz9wNnIH1yfzqQatfjT4NO+1y/ZLac3MMOfljlIALL6EhR+VVKKLILs09M8SappEk72typFyweZJokmSRgSQxRwV3Ak4OMjJqleXlxqF3NeXc8k9xM5eSWQ5Z2PUk1DRRZbhd7Guni7W49K/spb4i18owDMaGQRE5MYkxvCH+6Dikl8U6nPpEekyvayWsUQhjL2kRlRAxYKJCu8DJPfvWTRS5V2HzPubEvi/W5tK/sp77NqYlgP7pBI0SnKxmTG8oCBhSccD0qWDxvr9rpSaXDepHbxwPbIwt4/OSFyS0Yl27wp3HgHufWsKijkj2Dmfc1f+Em1M6ZFpjyW0trDG0MQltYneNCxYqrldwGWJ4PGayqKKaSWwm29wooopiClVS7BVGSeAKStfT7Awr5kg+dhwP7opAEFuIYwvU9z6mn+XVny6TZSsNMr7KTZVjZRspWLTK2yk2VZ2Unl0WKuaPl+1Hl1Z8ujy69blOJSK3l+1Hl+1WfKFHl0uUpSK3l+1J5dWvLpPLqXEpMpT2qXEZjkXKn9PeucvbKSyl2OMqfut2IrsPL9qiuLOO6iMUq7lP5j3FZTp3GmcZRVzUdMl09+fniJ+Vx/I+hqnXI01oygooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAopQCxAAJJ4AHet3TNF8rE1yAX6qnZfr70CbsQ6ZpZXFxOvPVEPb3Namyp9lLsp2IvcrbKTy6s7KQpSsUmV9lIUqxspNlBaK5Sk2VZKU3y6CzV8ugx1YMdGyvYscCZW8ujy6s+XSbKTQ0yv5dIY6sbKNlQ0UmVvLpDHVnZSbKhoq5VeBJUKOoZWGCCMg1z2p+HHizLZgunUx/wAQ+nrXVFKQpWU4KW5SkedEEEgjBHUGiu11DRbbUMs67Jf+ei9fx9a5u/0K8scts86IfxoM4+o6iuaVNotSuZ1FFFQMKKKKACiiigAooooAKKKKACiiigAoop8MMtw4SKNpGPZRmgBlT2llPeybIUz6seAv1Na9j4aJw942B/zzQ/zP+FbsVvHAgjiRUQdABTSMpVUtihp2kQ2I3H95N3cjp9PSr2ypdtLtpmd29yHZS7Kl20uygtEJSk2VPtpNlI0RBspPLqwVpNlBaK5Sk2e1T7aNlBRrbKNlT7KNleyecivto2VOUpNlSykQFKQpU5SkK1LKK5WkK1OVpCtQykQFaaVqcrTStQxkO2mFanK0wioYzLvdEsr0lniCOf404P8A9esW68K3EeTbSpKP7rfKf8K6wimEVnKCYKTRwNxY3Vqf31vInuRx+dQda9DK1Vm02zn/ANbbRMfXbg/pWbpdivadzhqK6yTw5YP91JE/3XP9agbwtb/wzzD6gGp5GP2iOaoroT4VTtduP+AD/GlHhaLvdSH6KKXIw9pE52iunTwxaL96SdvxA/pVmLQtPj5+zhj/ALZJo5GS60TkFUucKCx9AM1et9EvrjBEJjX+9Idv/wBeutigjhGIo0Qf7IAqQLT5CHWfRGHa+GIUw1zK0p/ur8o/xrYgtordNkMaxr6KMVMBSgU7EOTe40ClC08LShaASG7aXbTwtKFqS0hm2jbUu2jbSNEiLbRtqXbRtpXNEiErSbam20baC0iDbRtqbbSbaB2NjZRsqXFIRXsnnEO2k21MVpuKTYyLbSFalIppFSykRFaaVqYimEVDKIitNIqUimEVDGiMioyKmIqMipGRkUwipCKaRUskiIppFSEU0ikJjCKTFPIpMVJLGYoxT8UmKBDcUAU7FLikKwgFKBSgU4CpHYQLTgtKBTgtSykhAtLinBacFqWy0hoWnBacFp2KTZaiM20bafilC1NzRRGbaNtSYpNtK5okR7aNtSbaMUXKSIttJtqXbSbaCrGwVppFSGmkV7FzzLDCKbipKQilcdiMimkU800ipbKsMNMIqQ0w1LY7DDTDUhFMNSxkZpjCpCKjapAYRTCKkNMakIZTTTzSGkJjCKbin0mKTJG4oxTsUYpCExS4paAKkdgApwFAFOAqWNIAKcBQBTgKllpABTgKUCnAVLZokIBTgKUClxUlpCYoxTsYpcVJokNxRinYooNEhu2kxT8UhFA7DCKTFPxSYpgaxppoJozXp8x5thDTTSk00mlcdhDTTSk0wmlcdhDTDTiaYTSuMQmmE0pNNJpXAaTUZNPJqM0hCGmmlNNNAhppKWkpCEpMUppBSEGKKWikIAKWkpwqWVYUU4CkFOFSykhQKeBSAU4CoZokKBTgKQCnAVDNEhQKUCilFSaJBijFLS0i0hKKMUtBVhKQ0tIaaGNxRilNNNWkSzRzTS1JuppNdfMefYcWpCaaWpu6jmHYUmmk0hNNLUuYdgJppNBNMJouAE0wmgmmk0XACaYaCaYTRcQE0hNBNNJouIKQ0UUEiGgUtJigQtFFKKQAKcBSCnAVLLQoFOApAKeBUMpIUCnCkFPAqGaJCilFApahmiQopRRS0jRIKKKKRaCiikNAwpDRSVSExDSZoJppNaJEtlwtTS1NLU0mr5jhQ4tSFqYTSFqOYY4tTS1NJppajmGOLU0mmlqaWp3GKTTSaQmmk0XEBNNJoJpKdxMKQmg0U7ksKKKMUyQopcUYoASnAUAU4CkNCAU4CgCngVLKQAU4CgCngVDLQAU4CgCnAVLNEApQKXFKBUM0QYooxS4qS0JRS4pMUFoKSlNJTAQ00mlNNJq0S2ITTTQaTNaJENkpakLU0mkJrLmOJClqQmmk0maLlClqQmmlqQmncoUmmk0E03NO4Ck00mjNJTuAUHpRmkqkyWFFLilxVITExS4pwFAWqJY3FOxTgtOC0CGhaULTgtPC0hjAtPC04LTgtJlIaFpwWnhacFqGWhoWl20/FKFqWaIbigCn7aNtQy0xhFGKcRSYpFobQaWkIosVcaaQmlNIapILjSaaacaYTVpENjSaYetONMJxWqRm2PJppNBNNrjuciYpNITSE0ZouWmGaTNJmjNO5SA0hpaTpTuMSilNAqkxCYpcUopQKtMTEApdtOC08LVIljAtPC04LTgtUSNC04JTwtOCUxXGBKcEp4WnhKB3IwlPC08JTglIaYwLTgtP2U4LUstMjC0u2pNtLtqGWmRbaMVIVppFS0aJjCKaRUhFNNFikxhFNNPIppp2HcYaaacaYapILjTTCaeajNWkQ2NY0w05jUZrVIzbHGkNOpteZc5ExDRS9qSi5omJRQaUU7loSjFApapDExSgUU4VSYCAU8CgU8VaYmIFqQJQtSCtESIEp4SlFPFUiGNCU4JThT1pgNCU8JThThQJMYEpwWn04UFJjQlLsp4pe9JlJke2grT6Q1JaZGRSEVIaYaVi0yMimGpDTDRYdxhphp7Uw00h3GGmNT2pjVSQmxjVGTT2qNq0SJbGMajJpzUw9a1SIbP/2Q==" alt="Nossos Ventos" style="width:220px;height:auto;border-radius:50%;box-shadow:0 0 60px rgba(201,169,110,0.15);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACOTE 1 -->
+<section id="pacote1" class="sec sec-mid">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">01</span><h2 class="sh-t">Pacotes propostos</h2></div>
+
+    <div class="pacote">
+      <div class="pacote-header azul">
+        <div>
+          <div class="pacote-num">Pacote 01</div>
+          <div class="pacote-nome">Divulgação dos <em>Últimos Lotes</em></div>
+          <div class="pacote-prazo">⏱ Planejamento e execução em até 45 dias</div>
+        </div>
+        <div class="pacote-valor">
+          <div class="v"><sup>R$</sup>2.250</div>
+          <div class="obs">pagamento a combinar</div>
+        </div>
+      </div>
+
+      <div class="pacote-body">
+        <p class="pacote-intro">Campanha completa para a venda dos últimos lotes do Nossos Ventos — com estratégia definida pelo consultor Adson Ângelo, produção de conteúdo, landing page, tráfego pago e materiais físicos. Tudo planejado e executado em até 45 dias.</p>
+
+        <div class="estrategia-box">
+          <div class="icon">🧭</div>
+          <p><strong>Estratégia planejada pelo consultor Adson Ângelo</strong> — antes da execução, definimos juntos os objetivos, público-alvo, mensagem central da campanha e a distribuição das ações ao longo dos 45 dias.</p>
+        </div>
+
+        <div class="topicos">
+
+          <div class="topico">
+            <div class="topico-icon">🌐</div>
+            <h4>Landing Page</h4>
+            <p>Página de conversão exclusiva para os últimos lotes — com domínio personalizado e hospedagem inclusas.</p>
+            <ul>
+              <li>Design e copywriting estratégico</li>
+              <li>Domínio personalizado — 1 ano grátis</li>
+              <li>Hospedagem inclusa</li>
+            </ul>
+          </div>
+
+          <div class="topico">
+            <div class="topico-icon">🎬</div>
+            <h4>Produção de Vídeos (5 vídeos)</h4>
+            <p>5 vídeos gravados e editados para redes sociais — com roteiro e copywriting estratégico para cada peça.</p>
+            <ul>
+              <li>Apresentação do empreendimento</li>
+              <li>Diferenciais e lifestyle do condomínio</li>
+              <li>Urgência — "Últimos lotes disponíveis"</li>
+              <li>Depoimento ou apresentação do vendedor</li>
+              <li>Vídeo de chamada para a landing page</li>
+            </ul>
+          </div>
+
+          <div class="topico">
+            <div class="topico-icon">📱</div>
+            <h4>Gestão de Tráfego Pago — Instagram</h4>
+            <p>Criação, gestão e otimização das campanhas pagas no Instagram. A verba de mídia é por conta do cliente.</p>
+            <ul>
+              <li>Configuração e segmentação das campanhas</li>
+              <li>Produção das artes para os anúncios</li>
+              <li>Copywriting dos textos dos anúncios</li>
+              <li>Monitoramento e otimização contínua</li>
+            </ul>
+          </div>
+
+          <div class="topico">
+            <div class="topico-icon">🎨</div>
+            <h4>Produção de Artes para Redes Sociais</h4>
+            <p>Artes e conteúdo visual para o feed e stories do Instagram durante a campanha de divulgação.</p>
+            <ul>
+              <li>Posts para o feed</li>
+              <li>Stories e sequências de divulgação</li>
+              <li>Copywriting estratégico para legendas</li>
+            </ul>
+          </div>
+
+          <div class="topico">
+            <div class="topico-icon">🖨️</div>
+            <h4>Materiais Físicos — Arte para Impressão</h4>
+            <p>Produção das artes para materiais de divulgação offline. A impressão e o contato com gráficas ficam por conta do cliente.</p>
+            <ul>
+              <li>Arte para backdrop</li>
+              <li>Arte para banner</li>
+              <li>Arquivos em alta resolução para impressão</li>
+            </ul>
+          </div>
+
+          <div class="topico">
+            <div class="topico-icon">🤝</div>
+            <h4>Intermediação com Digital Influencers</h4>
+            <p>Prospecção, contato e negociação com influenciadores digitais alinhados ao perfil do empreendimento.</p>
+            <ul>
+              <li>Identificação de perfis estratégicos</li>
+              <li>Contato e negociação</li>
+              <li>Cachê do influenciador por conta do cliente</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="nota">💡 A verba de mídia para o tráfego pago e os custos de impressão dos materiais físicos são por conta do cliente. O contato com gráficas é feito diretamente pelo cliente.</div>
+      </div>
+
+      <div class="pacote-cta">
+        <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Tenho+interesse+no+Pacote+01+%E2%80%94+Divulga%C3%A7%C3%A3o+dos+%C3%9Altimos+Lotes+%28R%24+2.250%2C00%29+para+o+Nossos+Ventos." target="_blank" class="btn-cta primary">💬 Quero o Pacote 01</a>
+        <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Quero+os+dois+pacotes+%E2%80%94+Divulga%C3%A7%C3%A3o+%28R%24+2.250%29+%2B+Evento+%28R%24+1.200%29+para+o+Nossos+Ventos." target="_blank" class="btn-cta secondary">🎯 Quero os dois pacotes</a>
+      </div>
+    </div>
+
+    <!-- PACOTE 2 -->
+    <div id="pacote2" class="pacote">
+      <div class="pacote-header ouro">
+        <div>
+          <div class="pacote-num">Pacote 02</div>
+          <div class="pacote-nome">Cobertura do <em>Evento de Entrega</em></div>
+          <div class="pacote-prazo">⏱ Planejamento e execução em até 10 dias</div>
+        </div>
+        <div class="pacote-valor">
+          <div class="v"><sup>R$</sup>1.200</div>
+          <div class="obs">pagamento a combinar</div>
+        </div>
+      </div>
+
+      <div class="pacote-body">
+        <p class="pacote-intro">Cobertura profissional completa do evento de entrega dos lotes — com filmmaker, drone e produção de vídeo de resumo do evento para divulgação nas redes sociais. Estratégia e roteiro do evento definidos pelo consultor Adson Ângelo.</p>
+
+        <div class="estrategia-box">
+          <div class="icon">🧭</div>
+          <p><strong>Estratégia planejada pelo consultor Adson Ângelo</strong> — definimos o roteiro do evento, os momentos-chave para registro e a estratégia de divulgação do conteúdo após o evento.</p>
+        </div>
+
+        <div class="topicos">
+
+          <div class="topico">
+            <div class="topico-icon">🎥</div>
+            <h4>Filmmaker — Cobertura do Evento</h4>
+            <p>Captação profissional de todos os momentos do evento com câmera Sony e microfone lapela Hollyland.</p>
+            <ul>
+              <li>Câmera profissional Sony</li>
+              <li>Microfone lapela Hollyland</li>
+              <li>Iluminação com softbox</li>
+              <li>Cobertura completa do evento</li>
+            </ul>
+          </div>
+
+          <div class="topico">
+            <div class="topico-icon">🚁</div>
+            <h4>Gravação Aérea com Drone</h4>
+            <p>Imagens aéreas do evento e do empreendimento para compor o vídeo de resumo e o acervo do Nossos Ventos.</p>
+            <ul>
+              <li>Drone operado por parceiro especializado</li>
+              <li>Imagens aéreas do evento</li>
+              <li>Imagens aéreas do empreendimento</li>
+            </ul>
+          </div>
+
+          <div class="topico">
+            <div class="topico-icon">✂️</div>
+            <h4>Vídeo Resumo do Evento</h4>
+            <p>Edição do vídeo de resumo com os melhores momentos da cobertura — pronto para publicação no Instagram.</p>
+            <ul>
+              <li>Edição com material do filmmaker e drone</li>
+              <li>Trilha, corte e finalização</li>
+              <li>Formato otimizado para Instagram</li>
+            </ul>
+          </div>
+
+          <div class="topico">
+            <div class="topico-icon">📋</div>
+            <h4>Roteiro e Guia do Evento</h4>
+            <p>Criação do roteiro completo do evento e guia de captação — para garantir que todos os momentos importantes sejam registrados.</p>
+            <ul>
+              <li>Roteiro de cenas e momentos-chave</li>
+              <li>Guia para a equipe de filmagem</li>
+              <li>Planejamento de ângulos e tomadas</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="pacote-cta">
+        <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Tenho+interesse+no+Pacote+02+%E2%80%94+Cobertura+do+Evento+%28R%24+1.200%2C00%29+para+o+Nossos+Ventos." target="_blank" class="btn-cta primary">💬 Quero o Pacote 02</a>
+        <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Quero+os+dois+pacotes+%E2%80%94+Divulga%C3%A7%C3%A3o+%28R%24+2.250%29+%2B+Evento+%28R%24+1.200%29+para+o+Nossos+Ventos." target="_blank" class="btn-cta secondary">🎯 Quero os dois pacotes</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- AGÊNCIA -->
+<section id="agencia" class="sec">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">02</span><h2 class="sh-t">Agência Ângelo</h2></div>
+    <div class="agencia-box">
+      <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,0.62);line-height:1.9;margin-bottom:14px;">A <strong style="color:white;font-weight:500;">Agência Ângelo</strong> é uma agência de marketing digital com quase 5 anos de atuação, focada em resultados reais para empresas e profissionais. Com experiência em produção audiovisual, tráfego pago, design e estratégia, atendemos clientes de segmentos variados — de saúde a imóveis.</p>
+      <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,0.62);line-height:1.9;">Liderada por <strong style="color:white;font-weight:500;">Adson Ângelo</strong>, graduado em Gestão de Marketing com <strong style="color:white;font-weight:500;">MBA em Comunicação e Marketing pela USP/ECA</strong> — atuando como consultor estratégico em todos os projetos da agência.</p>
+      <div class="agencia-nums">
+        <div class="agencia-num"><span>5</span><p>anos de atuação</p></div>
+        <div class="agencia-num"><span>100+</span><p>clientes atendidos</p></div>
+        <div class="agencia-num"><a href="https://instagram.com/aagenciaangelo" target="_blank" style="text-decoration:none;"><span style="font-size:22px;">📸</span><p style="color:var(--lj);margin-top:4px;">@aagenciaangelo</p></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-sec">
+  <div class="cta-inner">
+    <div>
+      <h2 class="cta-h">Prontos para os<br><em>últimos lotes?</em></h2>
+      <p class="cta-p">Me chame no WhatsApp e definimos juntos como estruturar a campanha e o evento de entrega do Nossos Ventos.</p>
+    </div>
+    <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Vi+a+proposta+e+quero+conversar+sobre+o+Nossos+Ventos." target="_blank" class="cta-btn">💬 Falar pelo WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-logo"><span>Agência</span> Ângelo</div>
+  <div class="ft-info">Adson Ângelo · contato@agenciaangelo.com.br<br><a href="https://instagram.com/aagenciaangelo" target="_blank" style="color:var(--lj);text-decoration:none;">@aagenciaangelo</a><br>Proposta válida por 3 dias · Julho 2026</div>
+</footer>
+
+</body>
+</html>
